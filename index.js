@@ -8,7 +8,7 @@ app.use('/',require('./routes/index.js'));
 
 //set up the view engine
 app.set('view engine','ejs');
-app.set('views','./views');
+app.set('views','./views');  //folder from which to accesss views
 
 app.listen(port,function(err){
     if(err)
