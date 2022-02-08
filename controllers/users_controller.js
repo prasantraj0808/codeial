@@ -56,6 +56,6 @@ module.exports.create=function(req,res){
 
 //sigin and create the session for the usser
 module.exports.createSession=function(req,res){
-    //to do later
+    return res.redirect('/');
 };
 
