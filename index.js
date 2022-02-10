@@ -31,6 +31,7 @@ app.use(session({
     name:'codeial',
     secret:'blahsomething',//to change secret before deployment in production mode
     saveUninitialized:false,
+    resave:false,
     cookie:{
         maxAge:(1000*60*100)
     }
@@ -38,6 +39,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
 
 //use express router
 app.use('/',require('./routes/index.js'));
