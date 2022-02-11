@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static('./assets'));
 
 //extract style and scripts from suubpages into the layout
-
+app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
