@@ -13,6 +13,13 @@ const passportLocal=require('./config/passport-local-strategy');
 //import connectMongo from 'connect-mongo';
 const MongoStore=require('connect-mongo')(session);
 
+const sassMiddleware=require('node-sass');  //app crashing
+
+/*
+app.use(sassMiddleware({
+    src:'/assets/scss'
+}));
+*/
 
 app.use(express.urlencoded());
 app.use(cookieParser());
