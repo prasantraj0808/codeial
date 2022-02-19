@@ -1,7 +1,23 @@
+const Post=require('../models/post');
+
 module.exports.home=function(req,res){
-    console.log(req.cookies);
+    //console.log(req.cookies);
     //res.cookie('user_id',25);
-    return res.render('home',{
-        title:"HOme"
+    /*
+    Post.find({},function(err,posts){
+        return res.render('home',{
+            title:"codeial|Home",
+            posts:posts
+        });
     });
+    */
+
+    //populate the user for each post 
+    Post.find({}).populate('user').exec(function(err,posts){
+        return res.render('home',{
+            title:"codeial|Home",
+            posts:posts
+        });
+    });
+   
 };

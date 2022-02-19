@@ -15,6 +15,24 @@
             <input type="submit" value="Post now">
 
         </form>
+        <div id="posts-list-container">
+            <ul>
+                <%for(post of posts){%>
+                <p>
+                    <li>
+                        <%= post.content %>
+                        <br>
+                        <small>
+                            <%= post.user.name %>
+                        </small>
+                    </li>
+                    
+                </p>
+                   
+                <%}%>
+            </ul>
+
+        </div>
 
     </section>
 </html>
